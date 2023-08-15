@@ -1,0 +1,6 @@
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-block: 1rem;
+}

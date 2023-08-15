@@ -1,0 +1,58 @@
+{
+  "counter.decrement": [
+    {
+      "type": 0,
+      "value": "Decrement"
+    }
+  ],
+  "counter.increment": [
+    {
+      "type": 0,
+      "value": "Increment"
+    }
+  ],
+  "home.greeting": [
+    {
+      "type": 0,
+      "value": "Hello "
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "!"
+    }
+  ],
+  "nav.home": [
+    {
+      "type": 0,
+      "value": "Home"
+    }
+  ],
+  "not-found.return-home": [
+    {
+      "type": 0,
+      "value": "Return to home page"
+    }
+  ],
+  "not-found.text": [
+    {
+      "type": 0,
+      "value": "The page you requested could not be found."
+    }
+  ],
+  "not-found.title": [
+    {
+      "type": 0,
+      "value": "Page Not Found"
+    }
+  ],
+  "server-component.message": [
+    {
+      "type": 0,
+      "value": "This message is rendered on the server"
+    }
+  ]
+}

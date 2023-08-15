@@ -1,0 +1,58 @@
+{
+  "counter.decrement": [
+    {
+      "type": 0,
+      "value": "Aftrekken"
+    }
+  ],
+  "counter.increment": [
+    {
+      "type": 0,
+      "value": "Optellen"
+    }
+  ],
+  "home.greeting": [
+    {
+      "type": 0,
+      "value": "Hallo "
+    },
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": "!"
+    }
+  ],
+  "nav.home": [
+    {
+      "type": 0,
+      "value": "Startpagina"
+    }
+  ],
+  "not-found.return-home": [
+    {
+      "type": 0,
+      "value": "Terug naar de startpagina"
+    }
+  ],
+  "not-found.text": [
+    {
+      "type": 0,
+      "value": "De pagina die u heeft opgevraagd kan niet worden gevonden."
+    }
+  ],
+  "not-found.title": [
+    {
+      "type": 0,
+      "value": "Pagina niet gevonden"
+    }
+  ],
+  "server-component.message": [
+    {
+      "type": 0,
+      "value": "Dit bericht wordt weergegeven op de server"
+    }
+  ]
+}

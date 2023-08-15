@@ -1,0 +1,12 @@
+.nav {
+  border-left: 2px solid currentcolor;
+  margin-block: 1em;
+  padding-inline-start: 1em;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}

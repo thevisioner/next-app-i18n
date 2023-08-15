@@ -1,34 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js i18n example
+
+This is an example app that demonstrates how to use internationalization (i18n) in a Next.js app with App Router and Server Components.
 
 ## Getting Started
 
-First, run the development server:
+To get started, clone this repository and run the following commands:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This will start the development server at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Internationalization (i18n)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This app uses the `react-intl` library for internationalization. The `@/lib/intl` provides a `getIntl()` function that loads the `react-intl` library and returns an `intl` object that provides the `defineMessage()` and `formatMessage()` functions.
 
-## Learn More
+### Configuration
 
-To learn more about Next.js, take a look at the following resources:
+To configure application locales, update the `i18n.config.ts` file. This file exports a `locales` array that contains the locales that are supported by the application. The `defaultLocale` property specifies the default locale for the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+// i18n.config.ts
+const i18n = {
+  defaultLocale: "en",
+  locales: ["en", "nl"],
+} as const;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Also update the `lib/intl.ts` file to reflect the locales that are supported by the application. The `dictionaries` object contains a function for each locale that loads the dictionary for that locale.
 
-## Deploy on Vercel
+```typescript
+// lib/intl.ts
+const dictionaries = {
+  en: () => importDictionary("en"),
+  nl: () => importDictionary("nl"),
+};
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Defining Messages
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Messages are defined using the `intl.formatMessage` function from the `@/lib/intl` module. Here's an example of how to define a message:
+
+```typescript
+import { getIntl } from "@/lib/intl";
+
+const intl = await getIntl("en");
+
+const messages = {
+  greeting: intl.formatMessage({
+    id: "greeting",
+    defaultMessage: "Hello, {name}!",
+    description: "Greeting message",
+  }),
+};
+```
+
+In this example, the `intl.formatMessage` function is used to define a message with an ID of `"greeting"`, a default message of `"Hello, {name}!"`, and a description of `"Greeting message"`. The `{name}` placeholder will be replaced with the actual name when the message is formatted.
+
+### Wrapping Client Components
+
+Components can be wrapped with a server component to pass messages as props to client components. Here's an example of how to wrap the `Nav` component with a server component:
+
+```typescript
+import { getIntl } from "@/lib/intl";
+import { Locale } from "@/lib/i18n";
+import Nav, { type NavProps } from "./nav.client";
+
+interface NavWrapperProps extends Omit<NavProps, "messages"> {
+  locale: Locale;
+}
+
+export default async function NavWrapper({ locale, pages }: NavWrapperProps) {
+  const intl = await getIntl(locale);
+  const messages = {
+    home: intl.formatMessage({
+      id: "nav.home",
+      defaultMessage: "Home",
+      description: "Home",
+    }),
+  };
+  return <Nav pages={pages} locale={locale} messages={messages} />;
+}
+```
+
+### Extracting Messages
+
+Messages can be extracted from components using the `npm run intl:extract` command. This command will extract messages from the components and write them to the `en.json` file in the `dictionaries` directory.
+
+### Compiling Messages
+
+For better performance, messages should be compiled to AST format using the `npm run intl:compile` command. This command will compile the messages in the `dictionaries` directory and write them to the `dictionaries/compiled` directory.
+
+## License
+
+This app is licensed under the MIT license. See the `LICENSE` file for more information.
+
+I hope this helps! Let me know if you have any other questions or issues related to your TypeScript code.

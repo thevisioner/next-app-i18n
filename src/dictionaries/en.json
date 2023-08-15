@@ -1,0 +1,34 @@
+{
+  "counter.decrement": {
+    "defaultMessage": "Decrement",
+    "description": "Decrement the counter"
+  },
+  "counter.increment": {
+    "defaultMessage": "Increment",
+    "description": "Increment the counter"
+  },
+  "home.greeting": {
+    "defaultMessage": "Hello {name}!",
+    "description": "Greeting to welcome the user"
+  },
+  "nav.home": {
+    "defaultMessage": "Home",
+    "description": "Home"
+  },
+  "not-found.return-home": {
+    "defaultMessage": "Return to home page",
+    "description": "Not found page return home link"
+  },
+  "not-found.text": {
+    "defaultMessage": "The page you requested could not be found.",
+    "description": "Not found page text"
+  },
+  "not-found.title": {
+    "defaultMessage": "Page Not Found",
+    "description": "Not found page title"
+  },
+  "server-component.message": {
+    "defaultMessage": "This message is rendered on the server",
+    "description": "Example message rendered on the server"
+  }
+}

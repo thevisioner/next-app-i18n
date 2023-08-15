@@ -1,0 +1,10 @@
+.back-link {
+  color: var(--color-interactive);
+  display: inline-block;
+  margin-block-start: 1rem;
+}
+
+.back-link > span {
+  display: inline-block;
+  margin-inline-end: 0.5em;
+}

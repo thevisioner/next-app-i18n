@@ -1,0 +1,8 @@
+.output {
+  margin-block-start: 1em;
+
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 0.5rem;
+  padding: 1em;
+}

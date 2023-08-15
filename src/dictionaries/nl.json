@@ -1,0 +1,34 @@
+{
+  "counter.decrement": {
+    "defaultMessage": "Aftrekken",
+    "description": "Decrement the counter"
+  },
+  "counter.increment": {
+    "defaultMessage": "Optellen",
+    "description": "Increment the counter"
+  },
+  "home.greeting": {
+    "defaultMessage": "Hallo {name}!",
+    "description": "Greeting to welcome the user"
+  },
+  "nav.home": {
+    "defaultMessage": "Startpagina",
+    "description": "Home"
+  },
+  "not-found.return-home": {
+    "defaultMessage": "Terug naar de startpagina",
+    "description": "Not found page return home link"
+  },
+  "not-found.text": {
+    "defaultMessage": "De pagina die u heeft opgevraagd kan niet worden gevonden.",
+    "description": "Not found page text"
+  },
+  "not-found.title": {
+    "defaultMessage": "Pagina niet gevonden",
+    "description": "Not found page title"
+  },
+  "server-component.message": {
+    "defaultMessage": "Dit bericht wordt weergegeven op de server",
+    "description": "Example message rendered on the server"
+  }
+}
